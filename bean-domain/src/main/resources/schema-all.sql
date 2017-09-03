@@ -1,3 +1,39 @@
+CREATE TABLE `board` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `board_type` varchar(255) DEFAULT NULL,
+  `contents` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  `modified_by` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `view_count` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `users` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `encoded_password` varchar(255) NOT NULL,
+  `nick` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
+  `authority_id` bigint(20) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_ld22ky2pkjx9k6l1meeby3fko` (`authority_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `authorities` (
+  `authority_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `authority` varchar(255) NOT NULL,
+  PRIMARY KEY (`authority_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `hello` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*
 DROP TABLE people;
 
